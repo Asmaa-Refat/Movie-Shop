@@ -1,0 +1,50 @@
+<div class="login-container">
+  <img class="film" src="assets/images/film.png" alt="" />
+  <div class="logo">Scooby Dooby</div>
+  <div class="desc">
+    Scooby Dooby is the world’s most trusted recommendation resources for
+    quality entertainment. we provide the fans with a comprehensive guide to
+    what’s Fresh in theaters and at home. If you’re an entertainment fan looking
+    for a recommendation, or to share an opinion, you’ve come to the right
+    place.
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="login-form">
+      <div class="form-group">
+        <label for="uname">Username</label>
+        <input
+          type="text"
+          name="uname"
+          class="form-control"
+          formControlName="username"
+        />
+      </div>
+      <div class="form-group">
+        <label for="pword">Password</label>
+        <input
+          type="password"
+          name="pword"
+          class="form-control"
+          formControlName="password"
+        />
+      </div>
+      <div class="btn-container">
+        <button class="btn btn-dark" [disabled]="!loginForm.valid">
+          Login
+        </button>
+      </div>
+
+      <div>
+        <p class="mb-0" style="padding-top: 8px">
+          Don't have an account?
+          <a
+            class="text-white-50 fw-bold"
+            routerLink="/signUp"
+            style="cursor: pointer; color: #800000 !important"
+            >Sign Up</a
+          >
+        </p>
+      </div>
+    </div>
+  </form>
+</div>
